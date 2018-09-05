@@ -1,21 +1,20 @@
 {
-    "name": "omdb-request",
-    "version": "1.0.0",
-    "main": "omdbRequest.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "geocoder": "^0.2.3",
-      "inquirer": "^6.1.0",
-      "mysql": "^2.16.0",
-      "request": "^2.88.0",
-      "weather-js": "^2.0.0"
-    },
-    "devDependencies": {},
-    "description": ""
-  }
-  
+  "name": "omdb-request",
+  "version": "1.0.0",
+  "main": "omdbRequest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "geocoder": "^0.2.3",
+    "inquirer": "^6.1.0",
+    "mysql": "^2.16.0",
+    "request": "^2.88.0",
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
