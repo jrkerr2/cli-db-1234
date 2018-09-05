@@ -47,12 +47,14 @@ exports.buyProduct = function(product,quantity) {
           updateProduct(product,quantity,price,stock);
       }
       else {
-          console.log("Insufficient quantity!")
+          console.log("Insufficient quantity!");
+          // bamazon.inquire():
+          
       }       
       
     });
     
-    // con.end();
+    con.end();
 
 }
 

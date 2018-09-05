@@ -5,14 +5,14 @@ var mysql = require('mysql');
 var dbOps = require('./dbOps');
 
 // create connection variable
-var con = mysql.createConnection({
-  host: "localhost",
-  port: "3306",
-  user: "root",
-  password: "1234",
-  database: "bamazon"
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   port: "3306",
+//   user: "root",
+//   password: "1234",
+//   database: "bamazon"
   
-});
+// });
 
 inquirer.prompt([
     {
