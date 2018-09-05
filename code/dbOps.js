@@ -19,7 +19,10 @@ con.connect(function(err) {
     
     con.query(sql, function (err, result) {
       if (err) throw err;
-      console.log(result);
+      for (i = 0; i < result.length; i++) {
+        console.log("ID: " + result[i].item_id, "|| PROD: " + result[i].product_name, "|| PRICE: " + result[i].price);
+      }
+      // console.log(result);
       
     });
 
@@ -64,7 +67,7 @@ function updateProduct(product,quantity,price,stock) {
 
     con.query(sql, function (err, result) {
       if (err) throw err;
-      console.log("Your total is : " + (total).toFixed(2));
+      console.log("Your total is: " + (total).toFixed(2));
       
     });
 };
