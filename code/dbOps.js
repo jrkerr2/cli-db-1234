@@ -49,7 +49,7 @@ exports.buyProduct = function(product,quantity) {
       
     });
     
-    con.end();
+    // con.end();
 
 }
 
@@ -60,7 +60,7 @@ function updateProduct(product,quantity,price,stock) {
     var total = quantity*price;
     console.log(total);
 
-    var sql = `UPDATE products SET stock_quantity = ${remaining} WHERE product_name = ${product}`;
+    var sql = `UPDATE products SET stock_quantity = ${remaining} WHERE item_id = ${product}`;
 
     con.query(sql, function (err, result) {
       if (err) throw err;
