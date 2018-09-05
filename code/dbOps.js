@@ -64,7 +64,7 @@ function updateProduct(product,quantity,price,stock) {
 
     con.query(sql, function (err, result) {
       if (err) throw err;
-      console.log("Your total is : " + total);
+      console.log("Your total is : " + (total).toFixed(2));
       
     });
 };
