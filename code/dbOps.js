@@ -62,9 +62,9 @@ function updateProduct(product,quantity,price,stock) {
 
     var sql = `UPDATE products SET stock_quantity = ${remaining} WHERE product_name = ${product}`;
 
-    // con.query(sql, function (err, result) {
-    //   if (err) throw err;
-    //   console.log(result[0].stock_quantity);
-    //   if (result[0].stock_quantity >= quantity) 
-    // {
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("Your total is : " + total);
+      
+    });
 };
