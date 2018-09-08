@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+var bam = require('./bamazon');
 
 // create connection variable
 var con = mysql.createConnection({
@@ -23,9 +24,11 @@ con.connect(function(err) {
         console.log("ID: " + result[i].item_id, "|| PROD: " + result[i].product_name, "|| PRICE: " + result[i].price);
       }
       // console.log(result);
+      bam.askUser();
       
     });
 
+    // bam.askUser();  
 });
 
 // is there enough quantity?
@@ -48,13 +51,15 @@ exports.buyProduct = function(product,quantity) {
       }
       else {
           console.log("Insufficient quantity!");
+          bam.askUser();
+          // con.end();
           // bamazon.inquire():
           
       }       
       
     });
     
-    con.end();
+    // con.end();
 
 }
 
@@ -70,6 +75,7 @@ function updateProduct(product,quantity,price,stock) {
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("Your total is: " + (total).toFixed(2));
+      con.end();
       
     });
 };
