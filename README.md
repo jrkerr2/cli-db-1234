@@ -1,7 +1,22 @@
-## BAMAZON Inventory DB Application
+## bAMAZON Inventory DB Application
 
 # Installation
+- git clone this branch to your local machine
+- vagrant up to bring up virtual server (see vm doc for further info)
+- vagrant ssh to login to virtual server
+- cd /var/code
+- verify package.json exists
+- npm install
+- verify node_modules exists
+- verify node_modules contains package.json ingredients
 
-# Instructions
+# User Instructions
+- From command line in virtual machine, run `node bamazon.js`; follow user promtps, enter choices
 
-# Tutorials / Videos
+# Screenshots
+- See "Screencaps" folder for positive and negative paths through the application requirements
+
+# Technical Debt
+- no glaring defects detected so far
+- no data validation implemented
+- bonus extensions of the app certainly possible
