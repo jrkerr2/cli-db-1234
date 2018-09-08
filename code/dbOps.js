@@ -23,58 +23,48 @@ con.connect(function(err) {
       for (i = 0; i < result.length; i++) {
         console.log("ID: " + result[i].item_id, "|| PROD: " + result[i].product_name, "|| PRICE: " + result[i].price);
       }
-      // console.log(result);
+      // run inquirer after query is returned
       bam.askUser();
       
-    });
-
-    // bam.askUser();  
+    });    
 });
 
-// is there enough quantity?
-
+// execut user request -- is there enough quantity?
 exports.buyProduct = function(product,quantity) {
     var sql = `SELECT item_id,stock_quantity,price FROM products WHERE item_id = ${product}`;
-    console.log("Made it to buy");
-    
+        
     con.query(sql, function (err, result) {
       if (err) throw err;
-      console.log(result[0].stock_quantity);
+
+      // quantity check
       if (result[0].stock_quantity >= quantity) {
           var stock = result[0].stock_quantity;
           var price = result[0].price;
-          console.log(typeof result[0].price);
-          console.log(typeof result[0].stock_quantity);
-          console.log(typeof price);
-          console.log(typeof stock);
+
+          // if OK, update the DB using new values
           updateProduct(product,quantity,price,stock);
       }
       else {
           console.log("Insufficient quantity!");
-          bam.askUser();
-          // con.end();
-          // bamazon.inquire():
-          
-      }       
-      
-    });
-    
-    // con.end();
 
+          // re-prompt the user
+          bam.askUser();                   
+      }           
+    });       
 }
 
-function updateProduct(product,quantity,price,stock) {
-    console.log("Made it to Update");
-    var remaining = stock-quantity;
-    console.log(remaining);
-    var total = quantity*price;
-    console.log(total);
-
+// update query
+function updateProduct(product,quantity,price,stock) {    
+    var remaining = stock-quantity;  // calc remaining inventory after purchase
+    var total = quantity*price;  // calc total price charged to user; for presentation only
+    
+    // update query string using template literals from above variables
     var sql = `UPDATE products SET stock_quantity = ${remaining} WHERE item_id = ${product}`;
 
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("Your total is: " + (total).toFixed(2));
+      console.log("Thank you for your business!");
       con.end();
       
     });

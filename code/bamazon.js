@@ -21,7 +21,7 @@ exports.askUser = function() {
     var product = answers.id;
     var quantity = parseInt(answers.qty);
     
-    // call BUY function
+    // call BUY function, pass user input values
     dbOps.buyProduct(product,quantity);
     
   });
