@@ -1,4 +1,5 @@
 ## bAMAZON Inventory DB Application
+This application uses Node.js and Mysql to implement a CLI, ask the user to pick a product from the database, choose a quantity, check that the quanity needs can be met, and if so, update the database.
 
 # Installation
 - git clone this branch to your local machine
